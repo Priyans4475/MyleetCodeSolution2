@@ -9,13 +9,11 @@ class Solution {
         // code here
        float x= (float)N/(float)M;
         int y=round(x);
-        int ans=0;
-       if(N>0) ans= y*M;
-       else
-       ans=(y)*M;
+        return y*M;
        
-    //   cout<<x<<" "<<y<<" "<<ans;
-    return ans;
+       
+
+         
     }
 };
 
