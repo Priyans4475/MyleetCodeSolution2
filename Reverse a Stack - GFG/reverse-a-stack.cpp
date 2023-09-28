@@ -10,21 +10,34 @@ using namespace std;
 
 class Solution{
 public:
-    void Reverse(stack<int> &st){
-        
-     if(st.empty())
-     return;
-     
+     void insertAtBottomRecurr(stack<int>&st,int val){
+    if(st.empty())
+   { st.push(val);
+   return;}
+
+   int num=st.top();
+   st.pop();
+  
+   insertAtBottomRecurr(st,val);
+    st.push(num);
+   
+
+}
+
+void Reverse(stack<int> &st){
+      if(st.empty())
+   { 
+   return;
+       
+   }
+    
      int num=st.top();
      st.pop();
-     cout<<num<<" ";
+     
      Reverse(st);
-       
-           
-            
-        
-        
-    }
+     insertAtBottomRecurr(st,num);
+}
+
 };
 
 //{ Driver Code Starts.
