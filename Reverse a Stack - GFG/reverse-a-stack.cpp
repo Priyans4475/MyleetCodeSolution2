@@ -24,20 +24,19 @@ public:
 
 }
 
-void Reverse(stack<int> &st){
+void recurr(stack<int> &st){
       if(st.empty())
    { 
-   return;
-       
-   }
+   return;}
     
      int num=st.top();
      st.pop();
-     
-     Reverse(st);
+     recurr(st);
      insertAtBottomRecurr(st,num);
 }
-
+    void Reverse(stack<int> &st){
+      recurr(st);
+    }
 };
 
 //{ Driver Code Starts.
